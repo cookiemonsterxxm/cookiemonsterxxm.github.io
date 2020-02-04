@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Xinming Xu">
+
+
+
+    <meta name="description" content="This_Is_Created_By_Xinming_Xu">
+
+
+
+<title>Find_Virulent_Gene | Xinming_Xu&#39;s_Website</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xinming&#39;s Website</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xinming&#39;s Website</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Find_Virulent_Gene</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Xinming Xu</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">February 3, 2020&nbsp;&nbsp;22:02:03</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Project-3-by-Xinming-Xu"><a href="#Project-3-by-Xinming-Xu" class="headerlink" title="Project 3 by Xinming Xu"></a>Project 3 by Xinming Xu</h1><p>[TOC]</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="Version-of-the-tool-and-reference-database"><a href="#Version-of-the-tool-and-reference-database" class="headerlink" title="Version of the tool and reference database"></a>Version of the tool and reference database</h3><ul>
+<li>CARD:3.0.7(I downloaded the updated CARD database for my research)</li>
+<li>RGI:4.2.2</li>
+</ul>
+<h3 id="Tool-selection-and-database-selection"><a href="#Tool-selection-and-database-selection" class="headerlink" title="Tool selection and database selection"></a>Tool selection and database selection</h3><p>For my project 3, I used CARD as my antimicrobial resistance gene database, and RGI(Resistance Gene Identifier) as my bioinformatics tool to do the bioinformatics research for my strains. </p>
+<h3 id="My-tool-The-Resistance-Gene-Identifier-RGI-and-CARD"><a href="#My-tool-The-Resistance-Gene-Identifier-RGI-and-CARD" class="headerlink" title="My tool: The Resistance Gene Identifier(RGI) and CARD"></a>My tool: The Resistance Gene Identifier(RGI) and CARD</h3><p>The tool is used to predict resistomes from protein or nucleotide data based on homology and SNP models, designed for de novo annotation of gene, complete genome, or genome assembly sequence for their antibiotic resistome. </p>
+<p>To be more specific, the RGI analyzes genome or proteome sequences under three paradigms: <strong>Perfect</strong>, <strong>Strict</strong>, and <strong>Loose</strong>.</p>
+<blockquote>
+<ul>
+<li><p>The Perfect algorithm is most often applied to clinical surveillance as it detects perfect matches to the curated reference sequences and mutations in the CARD.</p>
+</li>
+<li><p>The Strict algorithm detects previously unknown variants of known AMR genes, including secondary screen for key mutations, using detection models with CARD’s curated similarity cut-offs to ensure the detected variant is likely a functional AMR gene. </p>
+</li>
+<li><p>The Loose algorithm works outside of the detection model cut-offs to provide detection of new, emergent threats and more distant homologs of AMR genes, but will also catalog homologous sequences and spurious partial hits that may not have a role in AMR. Combined with phenotypic screening, the Loose algorithm allows researchers to hone in on new AMR genes.</p>
+</li>
+</ul>
+</blockquote>
+<p>Refernce database: CARD</p>
+<blockquote>
+<p>The reference database The Comprehensive Antibiotic Resistance Database (“CARD”) provides data, models, and algorithms relating to the molecular basis of antimicrobial resistance. The CARD provides curated reference sequences and SNPs organized via the Antibiotic Resistance Ontology (“ARO”). These data can be browsed on the website or downloaded in a number of formats. These data are additionally associated with detection models, in the form of curated homology cut-offs and SNP maps, for prediction of resistome from molecular sequences. These models can be downloaded or can be used for analysis of genome sequences using the Resistance Gene Identifier (“RGI”), either online or as a stand-alone tool.</p>
+</blockquote>
+<h4 id="RGI-main-usage"><a href="#RGI-main-usage" class="headerlink" title="RGI main usage"></a>RGI main usage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgi main -h</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">usage: rgi main [-h] -i INPUT_SEQUENCE -o OUTPUT_FILE</span><br><span class="line">                [-t &#123;read,contig,protein,wgs&#125;] [-a &#123;DIAMOND,BLAST&#125;]</span><br><span class="line">                [-n THREADS] [--include_loose] [--local] [--clean] [--debug]</span><br><span class="line">                [--low_quality] [-d &#123;wgs,plasmid,chromosome,NA&#125;] [-v]</span><br><span class="line"></span><br><span class="line">Resistance Gene Identifier - 4.2.2 - Main</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help            show this help message and exit</span><br><span class="line">  -i INPUT_SEQUENCE, --input_sequence INPUT_SEQUENCE</span><br><span class="line">                        input file must be in either FASTA (contig and</span><br><span class="line">                        protein), FASTQ(read) or gzip format! e.g</span><br><span class="line">                        myFile.fasta, myFasta.fasta.gz</span><br><span class="line">  -o OUTPUT_FILE, --output_file OUTPUT_FILE</span><br><span class="line">                        output folder and base filename</span><br><span class="line">  -t &#123;read,contig,protein,wgs&#125;, --input_type &#123;read,contig,protein,wgs&#125;</span><br><span class="line">                        specify data input type (default &#x3D; contig)</span><br><span class="line">  -a &#123;DIAMOND,BLAST&#125;, --alignment_tool &#123;DIAMOND,BLAST&#125;</span><br><span class="line">                        specify alignment tool (default &#x3D; BLAST)</span><br><span class="line">  -n THREADS, --num_threads THREADS</span><br><span class="line">                        number of threads (CPUs) to use in the BLAST search</span><br><span class="line">                        (default&#x3D;32)</span><br><span class="line">  --include_loose       include loose hits in addition to strict and perfect</span><br><span class="line">                        hits</span><br><span class="line">  --local               use local database (default: uses database in</span><br><span class="line">                        executable directory)</span><br><span class="line">  --clean               removes temporary files</span><br><span class="line">  --debug               debug mode</span><br><span class="line">  --low_quality         use for short contigs to predict partial genes</span><br><span class="line">  -d &#123;wgs,plasmid,chromosome,NA&#125;, --data &#123;wgs,plasmid,chromosome,NA&#125;</span><br><span class="line">                        specify a data-type (default &#x3D; NA)</span><br><span class="line">  -v, --version         prints software version number</span><br></pre></td></tr></table></figure>
+<h3 id="Input-data-selection"><a href="#Input-data-selection" class="headerlink" title="Input data selection"></a>Input data selection</h3><p>To perform the process, besides the reference CARD database, we need fasta file to generate perfect or strict hits for a genome assembly or genome sequence. </p>
+<p>Based on the current files under <code>/group/bit150/Project_3/</code>, we have either <code>.faa</code> or <code>.contigs.fa</code> file under the path for the reason that we need fasta file for RGI main. <code>.contigs.fa</code> file was assembled by MEGAhit in the Lab 8 and<code>.faa</code>is the protein data predicted by PROKKA with the help of BLAST to annotate protein coding sequence(Lab 9) after we got the <code>.contigs.fa</code> by MEGAhit in Lab 8.</p>
+<p>The reason why I chose contigs.fa file was probably because：<br>(1)The CARD manual requires us to use the fasta file(can be protein data <code>.faa</code> or nucleotide data<code>.contigs.fa</code>);<br>(2)If I input the nucleotide data, the CARD(RGI) will use Prodigal first to generate the predicted protein sequences, which including a secondary correction by RGI. However, if I used the protein sequences which were annotated and predicted before, RGI would skip ORF prediction and use protein sequence directly.</p>
+<p>In this way, using <code>.contigs.fa</code> is more flexible and sensitive. Short contigs, small plasmids, low quality assemblies should be filtered using Prodigal’s algorithms. What’s more, using <code>.contigs.fa</code> can allow me to predict partial AMR genes from short or low quality contigs which is more flexible with the help of setting RGI main parameters in the following research.</p>
+<p>But, indeed it will take less time to use RGI main tool to run the <code>.faa</code> since the protein sequence will be used directly.</p>
+<blockquote>
+<p>‘’If DNA sequences are submitted, RGI first predicts complete open reading frames (ORFs) using Prodigal (ignoring those less than 30 bp) and analyzes the predicted protein sequences. This includes a secondary correction by RGI if Prodigal undercalls the correct start codon to ensure complete AMR genes are predicted. However, if Prodigal fails to predict an AMR ORF, this will produce a false negative result.</p>
+<p>Short contigs, small plasmids, low quality assemblies, or merged metagenomic reads should be analyzed using Prodigal’s algorithms for low quality/coverage assemblies (i.e. contigs &lt;20,000 bp) and inclusion of partial gene prediction. If the low sequence quality option is selected, RGI uses Prodigal anonymous mode for open reading frame prediction, supporting calls of partial AMR genes from short or low quality contigs.</p>
+<p>If protein sequences are submitted, RGI skips ORF prediction and uses the protein sequences directly.’’</p>
+</blockquote>
+<blockquote>
+<p>——quoted from CARD/RGI mannual:<a href="https://github.com/arpcard/rgi" target="_blank" rel="noopener">https://github.com/arpcard/rgi</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#My query nucleotide data</span><br><span class="line">Ec_TY2482.contigs.fa </span><br><span class="line">Ec_55989.contigs.fa</span><br></pre></td></tr></table></figure>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="Load-CARD-Reference-Data-for-running-RGI-main"><a href="#Load-CARD-Reference-Data-for-running-RGI-main" class="headerlink" title="Load CARD Reference Data for running RGI main"></a>Load CARD Reference Data for running RGI main</h3><p>I first used wget function to get the lates CARD database(version:3.0.7) as my reference database and set it into my path.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;card.mcmaster.ca&#x2F;latest&#x2F;data</span><br><span class="line">tar -xvf data .&#x2F;card.json</span><br><span class="line">rgi load --card_json .&#x2F;card.json --local</span><br></pre></td></tr></table></figure>
+<h3 id="To-use-RGI-main-default-parameter-to-analyze-outbreak-strain-and-reference-strain"><a href="#To-use-RGI-main-default-parameter-to-analyze-outbreak-strain-and-reference-strain" class="headerlink" title="To use RGI main(default parameter) to analyze outbreak strain and reference strain"></a>To use RGI main(default parameter) to analyze outbreak strain and reference strain</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">module load conda3</span><br><span class="line">source activate CARD</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># To link the fasta files to current directionary</span><br><span class="line">ln -s &#x2F;group&#x2F;bit150&#x2F;Project_3&#x2F;Ec_55989.contigs.fa .</span><br><span class="line">ln -s &#x2F;group&#x2F;bit150&#x2F;Project_3&#x2F;Ec_TY2482.contigs.fa .</span><br><span class="line"></span><br><span class="line">#To run RGI main with Genome or Assembly DNA sequences</span><br><span class="line">##For Ec_TY2482</span><br><span class="line">###Got 68 results</span><br><span class="line">rgi main --input_sequence Ec_TY2482.contigs.fa --output_file  output2.fa --input_type contig --local --clean</span><br><span class="line"></span><br><span class="line">##For Ec_55989</span><br><span class="line">###Got 58 results</span><br><span class="line">rgi main --input_sequence Ec_55989.contigs.fa --output_file  output_55989 --input_type contig --local --clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="Use-the-two-results-default-to-generate-the-heatmap"><a href="#Use-the-two-results-default-to-generate-the-heatmap" class="headerlink" title="Use the two results(default) to generate the heatmap"></a>Use the two results(default) to generate the heatmap</h3><ol>
+<li>I generated a heat map from pre-compiled RGI main JSON files, samples and AMR genes organized alphabetically:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir rgi_result_files_directory&#x2F;</span><br><span class="line">mv output2.fa.json  EcTY2482.json</span><br><span class="line">mv output_55989.json Ec55989.json</span><br><span class="line">rgi heatmap --input ~&#x2F;project3&#x2F;rgi_result_files_directory&#x2F; --output ~&#x2F;project3&#x2F;heatmap_result</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>Yellow represents a perfect hit, teal represents a strict hit, purple represents no hit.</p>
+</blockquote>
+<ol start="2">
+<li>Besides the default heatmap function, I also generated a heat map from pre-compiled RGI main JSON files, samples clustered by similarity of resistome and AMR genes organized by Drug Class:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgi heatmap --input ~&#x2F;project3&#x2F;rgi_result_files_directory&#x2F; --output ~&#x2F;project3&#x2F;heatmap_class_result -cat drug_class -clus samples</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>AMR genes categorised by Drug Class and samples have been clustered hierarchically (see SciPy documentation). Yellow represents a perfect hit, teal represents a strict hit, purple represents no hit. Genes with asterisks (*) appear multiple times because they belong to more than one Drug Class category in the antibiotic resistance ontology (ARO).</p>
+</blockquote>
+<h3 id="Upload-the-json-file-Default-to-the-CARD-web"><a href="#Upload-the-json-file-Default-to-the-CARD-web" class="headerlink" title="Upload the .json file(Default) to the CARD web"></a>Upload the .json file(Default) to the CARD web</h3><p>Note that only Loose hits of e-10 or better can be visualized</p>
+<h3 id="Use-non-default-parameter-–include-loose"><a href="#Use-non-default-parameter-–include-loose" class="headerlink" title="Use non-default parameter: –include_loose"></a>Use non-default parameter: –include_loose</h3><p>This parameter includes loose hits in addition to strict and perfect hits. As mentioned in the introduction part, I have known that the Loose algorithm allows researchers to hone in on new AMR genes. So here, I wanna use this parameter to check if there are new AMR genes.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rgi main --input_sequence &#x2F;home&#x2F;bit150-27&#x2F;Project_3&#x2F;Ec_TY2482.contigs.fa --output_file &#x2F;home&#x2F;bit150-27&#x2F;project3&#x2F;loose_output_virulent --input_type contig --local --include_loose --clean</span><br><span class="line"></span><br><span class="line">rgi main --input_sequence &#x2F;home&#x2F;bit150-27&#x2F;Project_3&#x2F;Ec_55989.contigs.fa --output_file &#x2F;home&#x2F;bit150-27&#x2F;project3&#x2F;loose_output_avirulent --input_type contig --local --include_loose --clean</span><br></pre></td></tr></table></figure>
+<h3 id="Use-the-two-results-nondefault-to-generate-the-heatmap"><a href="#Use-the-two-results-nondefault-to-generate-the-heatmap" class="headerlink" title="Use the two results(nondefault) to generate the heatmap"></a>Use the two results(nondefault) to generate the heatmap</h3><p>The terminal showed:</p>
+<blockquote>
+<p>Loose hit encountered. Not being added.</p>
+</blockquote>
+<ul>
+<li>Yellow represents a perfect hit, teal represents a strict hit, purple represents no hit.<h3 id="Upload-the-txt-file-non-default-to-R"><a href="#Upload-the-txt-file-non-default-to-R" class="headerlink" title="Upload the .txt file(non-default) to R"></a>Upload the .txt file(non-default) to R</h3>Since the CARD website only allows .json file limited to 20MB. I cannot upload my .json file(adding non-default parameter –include_loose ) to the CARD, I used R to count the hits numbers instead.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">##Virulent strain</span><br><span class="line">loose_output_virulent &lt;- read.delim(&quot;~&#x2F;Downloads&#x2F;loose_output_virulent.txt&quot;)</span><br><span class="line">summary(loose_output_virulent$Cut_Off)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">##Avirulent strain</span><br><span class="line">loose_output_avirulent &lt;- read.delim(&quot;~&#x2F;Downloads&#x2F;loose_output_avirulent.txt&quot;)</span><br><span class="line">summary(loose_output_avirulent$Cut_Off)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><h3 id="The-output-format-information-txt-file"><a href="#The-output-format-information-txt-file" class="headerlink" title="The output format information(.txt file)"></a>The output format information(.txt file)</h3><p>The output txt file contains with columns(information) of:</p>
+<p>ORF_ID    Contig    Start    Stop    Orientation    Cut_Off    Pass_Bitscore    Best_Hit_Bitscore    Best_Hit_ARO    Best_Identities    ARO    Model_type    SNPs_in_Best_Hit_ARO    Other_SNPs    Drug Class    Resistance Mechanism    AMR Gene Family    Predicted_DNA    Predicted_Protein    CARD_Protein_Sequence    Percentage Length of Reference Sequence    ID    Model_ID</p>
+<h3 id="The-result-of-outbreak-TY-2482-strain"><a href="#The-result-of-outbreak-TY-2482-strain" class="headerlink" title="The result of outbreak TY-2482 strain"></a>The result of outbreak TY-2482 strain</h3><table>
+<thead>
+<tr>
+<th>Input strain</th>
+<th>Perfect Hits</th>
+<th>Strict Hits</th>
+<th>Loose Hits</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TY-2482</td>
+<td>14</td>
+<td>51</td>
+<td>0</td>
+</tr>
+<tr>
+<td>### The result of the reference avirulent strain: Ec55989</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Input strain</th>
+<th>Perfect Hits</th>
+<th>Strict Hits</th>
+<th>Loose Hits</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ec55989</td>
+<td>13</td>
+<td>45</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<h3 id="The-possible-antibiotic-resistance-gene-found-from-two-microbes-Default"><a href="#The-possible-antibiotic-resistance-gene-found-from-two-microbes-Default" class="headerlink" title="The possible antibiotic resistance gene found from two microbes(Default)."></a>The possible antibiotic resistance gene found from two microbes(Default).</h3><h4 id="RGI-visualization-result-AMR-genes-existing-in-each-strain"><a href="#RGI-visualization-result-AMR-genes-existing-in-each-strain" class="headerlink" title="RGI visualization result(AMR genes existing in each strain)"></a>RGI visualization result(AMR genes existing in each strain)</h4><p><img src="https://i.imgur.com/i0ZjAAG.png" alt="RGI visualization of TY-2482 strain"><br><strong>Fig.RGI visualization(AMR genes) of TY-2482 strain</strong></p>
+<p><img src="https://i.imgur.com/ShOIJQz.png" alt="RGI visualization of Ec55989 strain"><br><strong>Fig.RGI visualization(AMR genes) of Ec55989 strain</strong></p>
+<h4 id="Heatmap-result"><a href="#Heatmap-result" class="headerlink" title="Heatmap result"></a>Heatmap result</h4><p>From the heatmap result, we can know AMR genes existing in each strain and AMR genes existing in both strains.<br><img src="https://i.imgur.com/qMDlhai.png" alt=""><br><strong>Fig.Heatmap of two strains’ AMR genes</strong></p>
+<ul>
+<li>Yellow represents a perfect hit, teal represents a strict hit, purple represents no hit.</li>
+</ul>
+<p><img src="https://i.imgur.com/lyFSv9S.jpg" alt=""><br><strong>Fig.Heatmap of two strains’ AMR genes categorised by Drug Class</strong><br> <em>AMR genes categorised by Drug Class and samples have been clustered hierarchically (see SciPy documentation). Yellow represents a perfect hit, teal represents a strict hit, purple represents no hit. Genes with asterisks (</em>) appear multiple times because they belong to more than one Drug Class category in the antibiotic resistance ontology (ARO).</p>
+<h3 id="The-possible-antibiotic-resistance-gene-found-from-two-microbes-non-default-–include-loose"><a href="#The-possible-antibiotic-resistance-gene-found-from-two-microbes-non-default-–include-loose" class="headerlink" title="The possible antibiotic resistance gene found from two microbes(non-default:–include-loose)."></a>The possible antibiotic resistance gene found from two microbes(non-default:–include-loose).</h3><table>
+<thead>
+<tr>
+<th>Input strain</th>
+<th>Perfect Hits</th>
+<th>Strict Hits</th>
+<th>Loose Hits</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TY-2482</td>
+<td>14</td>
+<td>51</td>
+<td>4734</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Input strain</th>
+<th>Perfect Hits</th>
+<th>Strict Hits</th>
+<th>Loose Hits</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ec55989</td>
+<td>13</td>
+<td>45</td>
+<td>4393</td>
+</tr>
+<tr>
+<td>### Suspected AMR(antimicrobial resistance) genes:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* CTX-M-15</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* TEM-1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><h3 id="Overall-patterns-from-my-result"><a href="#Overall-patterns-from-my-result" class="headerlink" title="Overall patterns from my result"></a>Overall patterns from my result</h3><ol>
+<li>Using the default parameters, there are many genes both exist in the virulent and avirulent strains such as H-NS, cpxA, emrB, emrK, emrK and etc., while there are other specific genes existing in the virulent strain but not existing in the avirulent strain such as CTX-M-15, TEM-1 can be considered reasonably as the virulent(pathogenic) gene(those are selected because strict hits are found for those genes in the virulent strain while no hits are found for in the avirulent strain). What’s more, I can get more hits in our virulent strain than the avirulent strain which is quite reasonable since the virulent strain indeed will contain more antimicrobial resistance gene than the avirulent strain(Remember our reference database is Antimicrobial Resistance Gene Database!!).</li>
+<li>After the RGI main program(default), I mainly got two files:.txt and .json. I used .json uploaded to the CARD website and for generating heatmap.</li>
+<li>Then, I added <code>--include-loose</code> to get the result containing loose hits and then imported the .txt to R to count hits numbers. What I found here was that the perfect and strict hits stayed the same while involved more loose hits(more than four thousands)</li>
+<li>Based on the results above, I found my virulent genes and compared my result to the listed paper.<h3 id="Compare-my-result-to-the-published-paper"><a href="#Compare-my-result-to-the-published-paper" class="headerlink" title="Compare my result to the published paper"></a>Compare my result to the published paper</h3>My result is consistent with the paper <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1106483#t=article" target="_blank" rel="noopener">Epidemic Profile of Shiga-Toxin–Producing Escherichia coli O104:H4 Outbreak in Germany</a> that:<blockquote>
+<p> ‘’All isolates classified as the outbreak strain are resistant to beta-lactam antibiotics (e.g., ampicillin) and third-generation cephalosporins and are partially resistant to fluoroquinolones (nalidixic acid). The strain is sensitive to carbapenems and ciprofloxacin. The outbreak strain produces an ESBL complex (<strong>CTX-M15</strong>) and beta-lactamase <strong>TEM-1</strong>. ‘’<br> ——quoted from the paper above</p>
+</blockquote>
+</li>
+</ol>
+<p>This paper also reported <strong>CTX-M-15</strong> and <strong>TEM-1</strong> genes in the virulent strain.</p>
+<h3 id="The-difference-of-setting-default-parameter-and-nondefault-parameter-–include-loose"><a href="#The-difference-of-setting-default-parameter-and-nondefault-parameter-–include-loose" class="headerlink" title="The difference of setting default parameter and nondefault parameter(–include-loose)"></a>The difference of setting default parameter and nondefault parameter(–include-loose)</h3><p>After adding the non-default parameter to my command line, I got more loose hits for my result.<br>However, the heatmap result using either default .json file or non-default .json file stayed the same.<br>As mentioned before, </p>
+<blockquote>
+<p>Loose hit encountered. Not being added.</p>
+</blockquote>
+<p>in this way, heatmap will not use the loose hit as result. So, the heatmap generated from the default or non-default would be the same. But indeed, new AMR genes can be found using the <code>--include-loose</code>.</p>
+
+        </div>
+
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Bioinformatics/"># Bioinformatics</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/02/04/MetagenomeAnalysisQualityControl_BASH_Part/">MetagenomeAnalysisQualityControl_BASH_Part</a>
+            
+            
+            <a class="next" rel="next" href="/2020/02/03/hello-world/">Hello World</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Xinming Xu | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

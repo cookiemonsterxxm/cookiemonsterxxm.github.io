@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Xinming Xu">
+
+
+
+    <meta name="description" content="This_Is_Created_By_Xinming_Xu">
+
+
+
+<title>MetagenomeAnalysisQC | Xinming_Xu&#39;s_Website</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xinming&#39;s Website</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xinming&#39;s Website</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">MetagenomeAnalysisQC</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Xinming Xu</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">February 4, 2020&nbsp;&nbsp;21:39:42</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="SUMMARY-OF-READS"><a href="#SUMMARY-OF-READS" class="headerlink" title="SUMMARY OF READS"></a>SUMMARY OF READS</h3><ul>
+<li><p>THIS SCRIPT WAS DESIGNED TO FASTQC THE READ COUNTS AND READ LENGTH DISTRIBUTION BEFORE RAW DATA </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash -l</span><br><span class="line">#</span><br><span class="line">#SBATCH --mail-user&#x3D;xmixu@ucdavis.edu</span><br><span class="line">#SBATCH --mail-type&#x3D;ALL</span><br><span class="line">#SBATCH --job-name&#x3D;PRESTEP_FASTQC_fastq</span><br><span class="line">#SBATCH --error&#x3D;PRESTEP_FASTQC_fastq.err</span><br><span class="line">#SBATCH --partition&#x3D;bmm</span><br><span class="line">#SBATCH --array&#x3D;1-571:2%10</span><br><span class="line">#SBATCH --account&#x3D;millsgrp</span><br><span class="line">#SBATCH --time&#x3D;1-00:00:00</span><br><span class="line">#SBATCH --mem&#x3D;20G</span><br><span class="line">#SBATCH --nodes&#x3D;1</span><br><span class="line">#SBATCH --cpus-per-task&#x3D;16</span><br><span class="line"></span><br><span class="line">########################################</span><br><span class="line"># File paths</span><br><span class="line">in_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;RAW_DATA</span><br><span class="line">out_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;PRE_STEP</span><br><span class="line"></span><br><span class="line">file1&#x3D;$(ls $in_dir&#x2F;*fastq.gz | head -n $SLURM_ARRAY_TASK_ID | tail -1)</span><br><span class="line">file2&#x3D;$(echo $file1 | sed &#39;s&#x2F;_1&#x2F;_2&#x2F;&#39;)</span><br><span class="line">basename&#x3D;$(echo $file1 | cut -f 7 -d &#39;&#x2F;&#39; | cut -f 1 -d &#39;_&#39;)</span><br><span class="line"></span><br><span class="line">#load softwares</span><br><span class="line">module load fastqc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fastqc $file1 $file2 -o $out_dir --extract -t 16</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>THIS SCRIPT WAS DESIGNED TO OUTPUT THE READ COUNTS AND READ LENGTH DISTRIBUTION OF ALL FASTQ FILES WITHIN A FOLDER</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># File paths</span><br><span class="line">in_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;RAW_DATA</span><br><span class="line">out_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;sequencing_analysis</span><br><span class="line"></span><br><span class="line">#load softwares </span><br><span class="line">module load java bbmap</span><br><span class="line">echo &quot;NOW STARTING ANALYZE SEQEUNCING READS AT: &quot;; date</span><br><span class="line"></span><br><span class="line">for file in $in_dir&#x2F;*_1.fastq</span><br><span class="line">do</span><br><span class="line">        file1&#x3D;$file</span><br><span class="line">        file2&#x3D;$(echo $file1 | sed &#39;s&#x2F;_1&#x2F;_2&#x2F;&#39;)</span><br><span class="line">	filename&#x3D;$(basename &quot;$file1&quot;)</span><br><span class="line">        basename&#x3D;$(echo $filename | cut -f 1 -d &quot;_&quot;)</span><br><span class="line"></span><br><span class="line">                # reformat.sh is included in the bbmap module </span><br><span class="line">                reformat.sh in&#x3D;$file1 in2&#x3D;$file2 lhist&#x3D;$out_dir&#x2F;tmp&#x2F;$basename.txt</span><br><span class="line">                #merge all files with filenames; https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;questions&#x2F;387377&#x2F;merge-file-text-with-file-name</span><br><span class="line">                awk &#39;&#123;print $0 &quot;\t&quot; FILENAME&#125;&#39; $out_dir&#x2F;tmp&#x2F;*txt &gt; $out_dir&#x2F;2019_Moran_cellhostmicrobes_read_length.txt</span><br><span class="line"></span><br><span class="line">                # now calculate the total number of reads; https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;questions&#x2F;96031&#x2F;sum-the-values-in-a-column-except-the-header</span><br><span class="line">                awk &#39;&#123;s+&#x3D;$2&#125;END&#123;print s&#125;&#39; $out_dir&#x2F;tmp&#x2F;$basename.txt &gt; $out_dir&#x2F;$basename.count.txt</span><br><span class="line">                #merge all filbes with filenames </span><br><span class="line">                awk &#39;&#123;print $0 &quot;\t&quot; FILENAME&#125;&#39; $out_dir&#x2F;*count.txt &gt; $out_dir&#x2F;2019_Moran_cellhostmicrobes_read_count.txt</span><br><span class="line"></span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">#delete the intermidiate files&#x2F;folder</span><br><span class="line">rm -r tmp&#x2F;</span><br><span class="line">rm *count.txt</span><br><span class="line"></span><br><span class="line">echo &quot;ANALYSIS DONE AT: &quot;; date</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="STEP1-BMTagger-Remove-Host-DNA"><a href="#STEP1-BMTagger-Remove-Host-DNA" class="headerlink" title="STEP1_BMTagger: Remove Host DNA"></a>STEP1_BMTagger: Remove Host DNA</h3><ul>
+<li>STEP1: ALIGN THE RAW SEQUENCING DATA TO HUMAN GENOME SEQUENCES (BMTAGGER) AND REMOVE THE HOST CONTAMINATIONS<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">in_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;RAW_DATA</span><br><span class="line">out_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;STEP1_BMTagger</span><br><span class="line">###set the input&#x2F;output raw sequences directory; subjected to change everytime while you analyze a different study </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">module load blast srprism bmtools</span><br><span class="line"></span><br><span class="line">Read1&#x3D;$(ls $in_dir&#x2F;*fastq | head -n $SLURM_ARRAY_TASK_ID | tail -1)</span><br><span class="line">Read2&#x3D;$(echo $Read1 | sed &#39;s&#x2F;_1&#x2F;_2&#x2F;&#39;)</span><br><span class="line">outname&#x3D;$(echo $Read1 | cut -f 7 -d &#39;&#x2F;&#39; | cut -f 1 -d &#39;_&#39;)</span><br><span class="line"></span><br><span class="line">##the human bitmask file; The Dec. 2013 human reference sequence (GRCh38) was produced by the Genome Reference Consortium: http:&#x2F;&#x2F;www.ncbi.nlm.nih.gov&#x2F;projects&#x2F;genome&#x2F;assembly&#x2F;grc&#x2F;</span><br><span class="line"></span><br><span class="line">hm_db&#x3D;&#x2F;group&#x2F;kmkalangrp&#x2F;databases&#x2F;genome_references&#x2F;human_12_16</span><br><span class="line"></span><br><span class="line">bmtagger.sh -b $hm_db&#x2F;allchr_allalt.bitmask  -x $hm_db&#x2F;allchr_allalt.srprism -q 1 -1 $Read1 -2 $Read2 -o $out_dir&#x2F;$outname.human.txt</span><br><span class="line"></span><br><span class="line">###let&#39;s try to filter the bovine-associated DNA sequences </span><br><span class="line">module load java bbmap</span><br><span class="line"></span><br><span class="line">filterbyname.sh in&#x3D;$Read1 in2&#x3D;$Read2 out&#x3D;$out_dir&#x2F;$outname.R1_nohuman.fastq out2&#x3D;$out_dir&#x2F;$outname.R2_nohuman.fastq names&#x3D;$out_dir&#x2F;$outname.human.txt include&#x3D;f</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">###NOTE: for the array job setting, skip one sequence per sample, run 10 jobs at the same time; if you have 24 samples&#x2F;48 sequences, put a number of 48-1&#x3D;47 there!</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="STEP2-Trimm"><a href="#STEP2-Trimm" class="headerlink" title="STEP2_Trimm"></a>STEP2_Trimm</h3><ul>
+<li>STEP 2: USE TRIMMOMATIC TO REMOVE LOW-QUALITY READS;Take input from BMTagger (removal of the human DNA); Trimmomatic parameters followed this paper (Taft et al., 2018, mSphere) and using the paired end mode.<br>from link: <a href="http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V" target="_blank" rel="noopener">http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;NOW STARTING READ CLEANING WITH TRIMMOMATIC AT: &quot;; date </span><br><span class="line"></span><br><span class="line">#input and output file directory</span><br><span class="line">in_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;STEP1_BMTagger</span><br><span class="line">out_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;STEP2_Trim</span><br><span class="line"></span><br><span class="line">#identify the sequences and file names </span><br><span class="line">file1&#x3D;$(ls $in_dir&#x2F;*fastq | head -n $SLURM_ARRAY_TASK_ID | tail -1)</span><br><span class="line">file2&#x3D;$(echo $file1 | sed &#39;s&#x2F;R1_&#x2F;R2_&#x2F;&#39;)</span><br><span class="line">outname&#x3D;$(echo $file1 | cut -f 7 -d &#39;&#x2F;&#39; | cut -f 1 -d &#39;.&#39;)</span><br><span class="line"></span><br><span class="line">module load java trimmomatic</span><br><span class="line"></span><br><span class="line">#path to the sequencing adapter sequences </span><br><span class="line">trim_adapter&#x3D;&#x2F;group&#x2F;kmkalangrp&#x2F;databases&#x2F;trimmomatic-0.36_adapters</span><br><span class="line"></span><br><span class="line">java -jar &#x2F;usr&#x2F;share&#x2F;java&#x2F;trimmomatic-0.36.jar PE -phred33 -threads 16 \</span><br><span class="line">-trimlog $out_dir&#x2F;trimmomatic_log.txt $file1 $file2 \</span><br><span class="line">$out_dir&#x2F;$outname.R1_paired.fastq $out_dir&#x2F;$outname.R1_unpaired.fastq.gz $out_dir&#x2F;$outname.R2_paired.fastq $out_dir&#x2F;$outname.R2_unpaired.fastq.gz \</span><br><span class="line">ILLUMINACLIP:$trim_adapter&#x2F;TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:40</span><br><span class="line"></span><br><span class="line">echo &quot;STEP 2 DONE AT: &quot;; date</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="STEP3-FASTUniq"><a href="#STEP3-FASTUniq" class="headerlink" title="STEP3_FASTUniq"></a>STEP3_FASTUniq</h3><ul>
+<li>Remove duplicated reads<br>For FastUniq options: <a href="https://wiki.gacrc.uga.edu/wiki/FastUniq" target="_blank" rel="noopener">https://wiki.gacrc.uga.edu/wiki/FastUniq</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;NOW STARTING REMOVING DUPLICATE READS AT: &quot;; date </span><br><span class="line"></span><br><span class="line">#input and output file directory</span><br><span class="line">in_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;STEP2_Trim</span><br><span class="line">out_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;STEP3_FastUniq</span><br><span class="line"></span><br><span class="line">#identify the sequences and file names </span><br><span class="line">file1&#x3D;$(ls $in_dir&#x2F;*paired.fastq | head -n $SLURM_ARRAY_TASK_ID | tail -1)</span><br><span class="line">file2&#x3D;$(echo $file1 | sed &#39;s&#x2F;R1_&#x2F;R2_&#x2F;&#39;)</span><br><span class="line">basename&#x3D;$(echo $file1 | cut -f 7 -d &#39;&#x2F;&#39; | cut -f 1 -d &#39;.&#39;)</span><br><span class="line"></span><br><span class="line">touch $out_dir&#x2F;$basename.input_list.txt</span><br><span class="line">echo $file1 &gt;&gt; $out_dir&#x2F;$basename.input_list.txt</span><br><span class="line">echo $file2 &gt;&gt; $out_dir&#x2F;$basename.input_list.txt</span><br><span class="line"></span><br><span class="line">#call the program, fastuniq is installed in the conda environment under bio3</span><br><span class="line">module load bio3</span><br><span class="line"></span><br><span class="line">fastuniq -i $out_dir&#x2F;$basename.input_list.txt -t q -o $out_dir&#x2F;$basename.R1_dedup.fastq -p $out_dir&#x2F;$basename.R2_dedup.fastq</span><br><span class="line"></span><br><span class="line">echo &quot;STEP 3 DONE AT: &quot;; date</span><br></pre></td></tr></table></figure>
+<h3 id="STEP4-FLASH"><a href="#STEP4-FLASH" class="headerlink" title="STEP4_FLASH"></a>STEP4_FLASH</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">echo &quot;NOW STARTING PAIRED-END MERGING WITH FLASH AT: &quot;; date</span><br><span class="line"></span><br><span class="line">#input and output file directory</span><br><span class="line">in_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;STEP3_FastUniq</span><br><span class="line">out_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;STEP5_FLASH</span><br><span class="line"></span><br><span class="line">#identify the sequences and file names </span><br><span class="line">file1&#x3D;$(ls $in_dir&#x2F;*_dedup.fastq | head -n $SLURM_ARRAY_TASK_ID | tail -1)</span><br><span class="line">file2&#x3D;$(echo $file1 | sed &#39;s&#x2F;R1_&#x2F;R2_&#x2F;&#39;)</span><br><span class="line">basename&#x3D;$(echo $file1 | cut -f 7 -d &#39;&#x2F;&#39; | cut -f 1 -d &#39;.&#39;)</span><br><span class="line"></span><br><span class="line">#call the program directly a module </span><br><span class="line">module load flash</span><br><span class="line"></span><br><span class="line">        # -m: minium overlap length 10bp to be similar to pear </span><br><span class="line">        # -M: max overlap length </span><br><span class="line">        # -x: mismatch ratio, default is 0.25, which is quite high (e.g: 50bp overlap --&gt; 12.5 mismatch by default)</span><br><span class="line">        </span><br><span class="line">flash $file1 $file2 -m 10 -M 65 -x 0.1 -O -r 100 -f 180 -o $basename -d $out_dir -t 16</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo &quot;STEP 5 DONE AT: &quot;; date</span><br></pre></td></tr></table></figure>
+<h3 id="STEP5"><a href="#STEP5" class="headerlink" title="STEP5_"></a>STEP5_</h3></li>
+</ul>
+<h3 id="STEP6-MEGAHIT"><a href="#STEP6-MEGAHIT" class="headerlink" title="STEP6_MEGAHIT"></a>STEP6_MEGAHIT</h3><ul>
+<li>STEP 6. Assemble reads into contigs with megaHIT<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">echo &quot;NOW STARTING ASEEMBLY WITH MEGAHIT AT: &quot;; date</span><br><span class="line"></span><br><span class="line"># assemble with paired end reads input (after fastuniq deduplicate)</span><br><span class="line"></span><br><span class="line">#input and output file directory</span><br><span class="line">in_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;STEP3_FastUniq</span><br><span class="line">out_dir&#x3D;&#x2F;home&#x2F;xmixu&#x2F;infant_resistome_2020&#x2F;2019_Moran_cellhostmicrobes&#x2F;STEP6_MEGAHIT</span><br><span class="line"></span><br><span class="line">#identify the sequences and file names </span><br><span class="line">file1&#x3D;$(ls $in_dir&#x2F;*_dedup.fastq | head -n $SLURM_ARRAY_TASK_ID | tail -1)</span><br><span class="line">file2&#x3D;$(echo $file1 | sed &#39;s&#x2F;R1_&#x2F;R2_&#x2F;&#39;)</span><br><span class="line">basename&#x3D;$(echo $file1 | cut -f 7 -d &#39;&#x2F;&#39; | cut -f 1 -d &#39;.&#39;)</span><br><span class="line"></span><br><span class="line">###call the program, megahit was installed under bio </span><br><span class="line"></span><br><span class="line">module load bio</span><br><span class="line"></span><br><span class="line">#-m use up to 95% of the assigned memory; </span><br><span class="line">#-t run the job using 16 threads </span><br><span class="line"></span><br><span class="line">megahit -1 $file1 -2 $file2 -m 0.95 -t 16 -o $out_dir&#x2F;$basename.megahit</span><br><span class="line"></span><br><span class="line">echo &quot;STEP 6 DONE AT: &quot;; date</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        </div>
+
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Bioinformatics/"># Bioinformatics</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2020/02/04/MetagenomeAnalysisQualityControl_BASH_Part/">MetagenomeAnalysisQualityControl_BASH_Part</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Xinming Xu | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
