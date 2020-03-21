@@ -219,18 +219,24 @@
 镜像 ID 则是镜像的唯一标识，一个镜像可以对应多个 标签。</li>
 <li>删除本地镜像<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi 某个镜像名字ID</span><br></pre></td></tr></table></figure>
-<h3 id="Useful-commands-for-containers："><a href="#Useful-commands-for-containers：" class="headerlink" title="Useful commands for containers："></a>Useful commands for containers：</h3></li>
+
+</li>
+</ol>
+<h3 id="Useful-commands-for-containers："><a href="#Useful-commands-for-containers：" class="headerlink" title="Useful commands for containers："></a>Useful commands for containers：</h3><ol>
 <li>启动交互式容器<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --name new_name image</span><br></pre></td></tr></table></figure></li>
 </ol>
 <p><strong>按ctrl+p ctrl+q 会将交互式容器置于后台运行</strong></p>
-<p>2.列出当前所有正在运行的容器（host机下）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps [OPTION]</span><br></pre></td></tr></table></figure>
-<p>3.退出容器</p>
+<ol start="2">
+<li>列出当前所有正在运行的容器（host机下）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps [OPTION]</span><br></pre></td></tr></table></figure></li>
+<li>退出容器</li>
+</ol>
 <ul>
 <li>exit 容器停止推出</li>
 <li>ctrl+P+Q 容器不停止退出</li>
 </ul>
-<p>4.守护式容器： </p>
+<ol start="4">
+<li>守护式容器： </li>
+</ol>
 <ul>
 <li>长期运行 </li>
 <li>没有交互式回话 </li>
@@ -241,12 +247,16 @@
 <p>进一步，查看容器日志</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f -t --tail 容器名</span><br><span class="line">-f --follows&#x3D;true|false 默认false</span><br><span class="line">-t --timestamps&#x3D;true|false 默认false</span><br><span class="line">--tail&#x3D;&quot;all&quot;</span><br></pre></td></tr></table></figure>
 
-<p>5.查看容器内运行的进程</p>
+<ol start="5">
+<li><p>查看容器内运行的进程</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker top 容器ID</span><br></pre></td></tr></table></figure>
-
-<p>6.查看容器内部细节</p>
+</li>
+<li><p>查看容器内部细节</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 容器ID</span><br></pre></td></tr></table></figure>
-<p>7.进入正在运行的容器并以命令行交互（对应容器不停止退出）</p>
+</li>
+<li><p>进入正在运行的容器并以命令行交互（对应容器不停止退出）</p>
+</li>
+</ol>
 <ul>
 <li>docker exec -it 容器ID bashShell（是在容器中打开新的终端，并可以启动新的进程）</li>
 <li>重新进入docker attach 容器ID（直接进入容器启动命令的终端，不会启动新的进程）</li>
